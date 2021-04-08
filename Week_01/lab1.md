@@ -1,12 +1,4 @@
-## Due Thursday 4/8:
+1. I entered the expression "BLACK_POP"/"TOT_POP" to create a field "BLACK_PCT," describing what percentage of each county's population is Black people. 
+2. I thought that mapping the Black population percentage of each county would be a field of interest as a jumping off point to analyze historical trends of settlement, as well as a way to guide equitable policies. As a marginalized group facing social, political, and economic barriers in regard to where they could and can live, such a map reveals important insights into these forces. As policymaking shifts from equality to equity-based metrics, in other words, thinking about who has the most need rather than equally distributing resources to everyone regardless of need, knowing where Black populations are most concentrated is a key piece of knowledge. 
+3. There are a number of problems that may be present in the data. The dataset is from 2019; especially in light of the pandemic and associated financial recession in 2020 that caused substantial population migration, it is unclear if this older dataset accurately reflects the current total or Black population in each state. Another problem is the relatively large geographical unit of county. As a result of segregation and redlining, communities of color tend to be clustered, rather than distributed evenly across the geographic area. If one were to design an equity-based policy sending more resources to populations with a higher percentage of Black people, county would not be geographically specific enough to accurately target Black communities.
 
-1.  Calculate a new field using already existing fields in the `CA_Counties_2019.shp` dataset or another dataset of your choosing.
-
-2. Create a geojson named `lab1.geojson` and add it to your repository.
-
-3. Create a new markdown file called `lab1.md` and explain the following:
-   -  What fields you used
-   -  Why you used these fields
-   -  What problems could the data set have
-4. Commit both `lab1.geojson` and `lab1.md` to your repository and push it to GitHub.
-5. Fill out this form so I can associate you with your GitHub repo: [https://forms.gle/J8kebeHEd5xbGaiRA](https://forms.gle/J8kebeHEd5xbGaiRA)
