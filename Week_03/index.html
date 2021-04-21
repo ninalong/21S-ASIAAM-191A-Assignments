@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic Leaflet Map</title>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+
+        <style> #map{height:60vh}</style>
+
+        <!-- Leaflet's css-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+        <!-- Leaflet's JavaScript-->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    </head>
+    
+    
+    <body style= "background-color: powderblue;">
+        <h1 style="font-family:helvetica; background-color:tomato; text-align:center;">Assembly District 54 Special Election Vote Centers</h1>
+        <h3 style="font-family:helvetica;">Vote Centers Open:</h3>
+        <ul style="font-family:helvetica">
+            <li>May 8th-May 17th: 10AM-7PM</li>
+            <li>Election Day, May 18th: 7AM-8PM</li>
+        </ul>
+        <h3 style="font-family: helvetica">Register to vote by May 3rd!</h3>
+        <div id="map"></div>
+    </body>
+    <script src="js/init.js"></script>
+</html>
