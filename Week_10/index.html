@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Reimagine 6th Street</title>
+        <title>Reimagining 6th Street</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" href="styles/style.css">
@@ -14,10 +14,25 @@
     </head>
     
      <body>
-        <header><h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Welcome to Reimagine 6th Street!</h2><p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Reimagine 6th Street is a proposed project to pedestrianize 6th street between Normandie and Vermont in Koreatown. Please share what places in this corridor are important to you! While we accept and appreciate responses from all folks, we hope to uplift the perspectives of local residents.</p><h3 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> <a href= "https://docs.google.com/forms/d/e/1FAIpQLSeoF27jpccOHGXUusGPrSQwePf88vIJGbB3813BmIkdtT5PbA/viewform)">Fill out the survey to add your most frequented location on 6th Street!</a> </h3></header>
+        <header>Welcome to Reimagining 6th Street!</header>
         <div id="contents"></div>
-        <div id="map"></div>
+        <div id="map">
+		<div id="legend">
+			<div>Koreatown Resident
+			    <svg height="10" width="10">
+				<circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="green" />
+			    </svg> 
+			</div>
+
+			<div>Non-Koreatown Resident 
+			    <svg height="10" width="10">
+				<circle cx="5" cy="5" r="4" stroke="black" stroke-width="1" fill="red" />
+			    </svg> 
+			</div>
+		<div>
+	</div>
         <div id="survey">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeoF27jpccOHGXUusGPrSQwePf88vIJGbB3813BmIkdtT5PbA/viewform?embedded=true" width="640" height="764" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
         <script src="js/init.js"></script>
     </body>

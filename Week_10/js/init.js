@@ -9,10 +9,6 @@ let Esri_WorldGrayCanvas = L.tileLayer('https://server.arcgisonline.com/ArcGIS/r
 
 Esri_WorldGrayCanvas.addTo(map)
 
-// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map);
-
 fetch(url)
 	.then(response => {
 		return response.json();
@@ -27,24 +23,24 @@ let KTownResident = L.featureGroup();
 let NotKTownResident = L.featureGroup();
 
 let exampleOptions = {
-    radius: 10,
+    radius: 4,
     fillColor: "#ff7800",
     color: "#000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 0.3
+    fillOpacity: 0.8
 }
 
 function addMarker(data){
-    if(data.areyouaresidentofkoreatown == "Yes"){
-        exampleOptions.fillColor = "blue"
-        KTownResident.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Koreatown resident</h2>`+ '' + `<p>Most frequented location: ${data.locationname}`))
-        createButtons(data.lat,data.lng,data.locationaddress)
+    if(data.KTownResident == "Yes"){
+        exampleOptions.fillColor = "green"
+        KTownResident.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Speak English fluently</h2>`))
+        createButtons(data.lat,data.lng,data.location)
         }
     else{
-        exampleOptions.fillColor = "orange"
-        NotKTownResident.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Not a Koreatown resident</h2>`+ '' + `<p>Most frequented location: ${data.locationname}`))
-        createButtons(data.lat,data.lng,data.locationaddress)
+        exampleOptions.fillColor = "red"
+        NotKTownResident.addLayer(L.circleMarker([data.lat,data.lng],exampleOptions).bindPopup(`<h2>Speak other languages</h2>`))
+        createButtons(data.lat,data.lng,data.location)
     }
     return data.timestamp
 }
@@ -55,8 +51,6 @@ function createButtons(lat,lng,title){
     newButton.innerHTML = title;
     newButton.setAttribute("lat",lat); 
     newButton.setAttribute("lng",lng);
-    newButton.style.background = 'moccasin';
-    newButton.style.color = 'black';
     newButton.addEventListener('click', function(){
         map.flyTo([lat,lng]);
     })
@@ -80,13 +74,13 @@ function formatData(theData){
         formattedData.forEach(addMarker)
         KTownResident.addTo(map)
         NotKTownResident.addTo(map)
-        let allLayers = L.featureGroup([speakFluentEnglish,speakOtherLanguage]);
+        let allLayers = L.featureGroup([KTownResident,NotKTownResident]);
         map.fitBounds(allLayers.getBounds());        
 }
 
 let layers = {
-	"Koreatown resident": KTownResident,
-	"Not a Koreatown resident": NotKTownResident
+	"Koreatown Resident": KTownResident,
+	"Non-Koreatown Resident": NotKTownResident
 }
 
 L.control.layers(null,layers).addTo(map)
